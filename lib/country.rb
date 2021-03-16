@@ -1,6 +1,6 @@
 class Country
 
-    attr_accessor :name, :url, :language, :currency, :currency_code, :country_code, :emergency, :vaccinations
+    attr_accessor :name, :url, :country_code, :language, :currency, :currency_code, :currency_symbol, :country_phone_code, :police, :ambulance, :fire, :water, :vaccinations
 
     @@all = []
 

@@ -22,13 +22,19 @@ class API
         response.body
         new_country = JSON.parse(response.body)
         country.name = new_country["names"]["name"]
+        country.country_code = new_country["names"]["iso3"]
         country.language = new_country["language"]#["language"]
-        country.country_code = new_country["telephone"]["calling_code"]
-        country.emergency = new_country["telephone"]["calling_code"]
-        #country.vaccinations = 
+        country.country_phone_code = new_country["telephone"]["calling_code"]
+        country.police = new_country["telephone"]["police"]
+        country.ambulance = new_country["telephone"]["ambulance"]
+        country.fire = new_country["telephone"]["fire"]
+        country.water = new_country["water"]["short"]
+        #country.vaccinations = new_country["vaccinations"]
         country.currency = new_country["currency"]["name"]
         country.currency_code = new_country["currency"]["code"]
+        country.currency_symbol = new_country["currency"]["symbol"]
         #country.neighbors = 
+        country.advise = new_country["currency"]["name"]
     binding.pry
         
     end
