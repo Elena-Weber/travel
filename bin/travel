@@ -1,0 +1,13 @@
+#!/usr/bin/env ruby
+
+#require 'rest-client'
+require 'json'
+require 'open-uri'
+require 'net/http'
+require 'pry'
+
+require_relative '../lib/cli'
+require_relative '../lib/api'
+require_relative '../lib/country'
+
+CLI.new.run
