@@ -33,9 +33,9 @@ class API
         country.currency = new_country["currency"]["name"]
         country.currency_code = new_country["currency"]["code"]
         country.currency_symbol = new_country["currency"]["symbol"]
-        #country.neighbors = 
-        country.advise = new_country["currency"]["name"]
-    binding.pry
+        country.advice = new_country["advise"]["UA"]["advise"]
+        #country.neighbors = new_country["neighbors"]
+    #binding.pry
         
     end
 
