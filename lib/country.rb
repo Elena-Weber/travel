@@ -1,10 +1,12 @@
 class Country
-    attr_accessor :name, :language, :currency
+
+    attr_accessor :name, :url, :language, :currency, :currency_code, :country_code, :emergency, :vaccinations
 
     @@all = []
 
-    def initialize(name)
+    def initialize(name, url)
         @name = name
+        @url = url
         @@all << self
     end
 
