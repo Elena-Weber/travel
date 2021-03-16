@@ -22,7 +22,8 @@ class API
         response.body
         new_country = JSON.parse(response.body)
         country.name = new_country["names"]["name"]
-        country.country_code = new_country["names"]["iso3"]
+        country.country_code_2 = new_country["names"]["iso2"]
+        country.country_code_3 = new_country["names"]["iso3"]
         country.language = new_country["language"]#["language"]
         country.country_phone_code = new_country["telephone"]["calling_code"]
         country.police = new_country["telephone"]["police"]

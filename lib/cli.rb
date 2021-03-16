@@ -30,7 +30,7 @@ class CLI
     def display_country_details(country)
         API.load_country_details(country)
         puts "Here is some useful information about #{country.name}:"
-        puts "Country code: #{country.country_code}"
+        puts "Country codes: #{country.country_code_2}, #{country.country_code_3}"
         puts "Language: #{country.language}"
         puts "Country phone code: +#{country.country_phone_code}"
         puts "In case of emergency, dial: police: #{country.police}, ambulance: #{country.ambulance}, fire: #{country.fire}"
