@@ -18,15 +18,10 @@ class CLI
         puts "       * Hello! Welcome to World Traveller's Guide! *"
         puts "       *                                            *"
         puts "       **********************************************"
-        #puts "Please enter the name of the country or type \"list\" to see the full list."
+        puts "Please enter the name of the country or type \"list\" to see the full list."
         API.load_countries
-        #input = gets.chomp.to_i
-        #type_country
-        #list_countries
+        #enter_country
         country_pages
-        #desired_country
-        #select_country
-        #another_country
     end
 
     def list_countries
@@ -35,7 +30,7 @@ class CLI
         end
     end
 
-    def type_country
+    def enter_country
         input = gets.chomp
 
         country = Country.all.detect do |country|
@@ -49,12 +44,12 @@ class CLI
         else
             puts "bye"
         end
-#binding.pry 
+binding.pry 
     end
 
     def country_pages
         puts ""
-        puts "Browse through the countries by entering the page number: 1, 2, 3, 4, 5, 6, 7, 8 (each page contains 32 coutries)."
+        puts "Browse through the countries by entering the page number: 1, 2, 3, 4, 5, 6, 7, 8 (each page contains 32 countries)."
         puts "Alternatively, enter 0 to see the whole list (256 countries) on a single page."
         input = gets.chomp.to_i
         #binding.pry 
@@ -121,7 +116,6 @@ def desired_country
         input = gets.chomp
         if input === "y" || input === "Y"
             select_country
-            #another_country
         elsif input === "n" || input === "N"
             country_pages
         else
@@ -133,14 +127,13 @@ def desired_country
             def select_country
                 puts "Please select a country by entering its number (1-256):"
                 input = gets.chomp
-                #if 
-                    input.to_i.between?(1, Country.all.count)
+                    if input.to_i.between?(1, Country.all.count)
                     country = Country.all[input.to_i-1]
                     display_country_details(country)
                     another_country
-                #else
-                #    select_country
-                #end
+                    else
+                        select_country
+                    end
             end
 
     def display_country_details(country)
@@ -167,8 +160,6 @@ def desired_country
         input = gets.chomp
         if input === "y" || input === "Y"
             country_pages
-            #select_country
-            #another_country
         elsif input === "n" || input === "N"
             puts "Bye-bye! Have a nice day! Safe travels!"
             puts "          ____                              "
