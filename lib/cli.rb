@@ -30,6 +30,7 @@ class CLI
     def display_country_details(country)
         API.load_country_details(country)
         puts "Here is some useful information about #{country.name}:"
+        puts "Full name: #{country.full_name}"
         puts "Country codes: #{country.country_code_2}, #{country.country_code_3}"
         puts "Language: #{country.language}"
         puts "Country phone code: +#{country.country_phone_code}"
@@ -39,6 +40,16 @@ class CLI
         puts "Currency: name: #{country.currency}, code: #{country.currency_code}, symbol: #{country.currency_symbol}"
         puts "Travel advisory: #{country.advice}"
         puts "Neigboring countries: #{country.neighbors}"
+        puts " *===========================================================*"
+        puts " |                                                     \\_/   |"
+        puts " |                                                   --(_)-- |"
+        puts " |   /\\                           __     /\\       __   / \\   |"
+        puts " |  /~'\\    /\\    /\\             (())   //\\\\     (())        |"
+        puts " | /    \\  /~'\\  /~`\\           ((())) ///\\\\\\   ((()))       |"
+        puts " |/      \\/    \\/    \\     ,.-.---)(--.--)(---'---)(.-'---'''|"
+        puts " |        \\           \\,'`                                   |"
+        puts " *===========================================================*"
+
     end
 
     def another_country
