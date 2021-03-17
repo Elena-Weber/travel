@@ -6,7 +6,6 @@ class CLI
         puts "* Hello! Welcome to World Traveller's Guide! *"
         puts "*                                            *"
         puts "**********************************************"
-        puts "Here is the list of countries in the guide:"
         puts "Please enter the name of the country or type \"list\" to see the full list."
         API.load_countries
 
@@ -24,7 +23,7 @@ class CLI
 
     def type_country
         input = gets.chomp
-        
+
         country = Country.all.detect do |country|
             country.name == input
         end
