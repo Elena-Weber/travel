@@ -18,7 +18,7 @@ class CLI
         puts "       * Hello! Welcome to World Traveller's Guide! *"
         puts "       *                                            *"
         puts "       **********************************************"
-        puts "Please enter the name of the country or type \"list\" to see the full list."
+        #puts "Please enter the name of the country or type \"list\" to see the full list."
         API.load_countries
         #enter_country
         country_pages
