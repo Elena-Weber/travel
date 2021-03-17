@@ -1,7 +1,11 @@
 class CLI
 
     def run
-        puts "Hello! Welcome to the World Traveller's Guide!"
+        puts "**********************************************"
+        puts "*                                            *"
+        puts "* Hello! Welcome to World Traveller's Guide! *"
+        puts "**********************************************"
+        puts "*                                            *"
         puts "Here is the list of countries in the guide:"
         API.load_countries
         list_countries
@@ -60,7 +64,12 @@ class CLI
             select_country
             another_country
         elsif input === "n" || input === "N"
-            puts "Bye! Have a nice day!"
+            puts "Bye-bye! Have a nice day! Safe travels!"
+            puts "          ____                              "
+            puts "     _||__|  |  ______   ______   ______    "
+            puts "    (        | |      | |      | |      |   "
+            puts "    /-()---() ~ ()--() ~ ()--() ~ ()--()    "
+            puts " -------------------------------------------"
         else
             puts "Please enter Y or N:"
             another_country
