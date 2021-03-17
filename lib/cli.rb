@@ -44,65 +44,65 @@ class CLI
         else
             puts "bye"
         end
-binding.pry 
+#binding.pry 
     end
 
     def country_pages
         puts ""
         puts "Browse through the countries by entering the page number: 1, 2, 3, 4, 5, 6, 7, 8 (each page contains 32 countries)."
         puts "Alternatively, enter 0 to see the whole list (256 countries) on a single page."
+        puts "! Please note that the countries are in the alphebetical order !"
         input = gets.chomp.to_i
-        #binding.pry 
         if input == 1
-            puts "Here are the countries on page #{input}:"
+            puts "*** Here are the countries on page #{input} ***"
             Country.all[input-1, 32].each.with_index(input) do |country, index|
                 puts "#{index}. #{country.name}"
             end
             desired_country
         elsif input == 2
-            puts "Here are the countries on page #{input}:"
+            puts "*** Here are the countries on page #{input} ***"
                 Country.all[input+30, 32].each.with_index(input+31) do |country, index|
                         puts "#{index}. #{country.name}"
                 end
                 desired_country
         elsif input == 3
-            puts "Here are the countries on page #{input}:"
+            puts "*** Here are the countries on page #{input} ***"
                 Country.all[input+61, 32].each.with_index(input+62) do |country, index|
                         puts "#{index}. #{country.name}"
             end
             desired_country
         elsif input == 4
-            puts "Here are the countries on page #{input}:"
+            puts "*** Here are the countries on page #{input} ***"
                 Country.all[input+92, 32].each.with_index(input+93) do |country, index|
                         puts "#{index}. #{country.name}"
             end
             desired_country
         elsif input == 5
-            puts "Here are the countries on page #{input}:"
+            puts "*** Here are the countries on page #{input} ***"
                 Country.all[input+123, 32].each.with_index(input+124) do |country, index|
                         puts "#{index}. #{country.name}"
             end
             desired_country
         elsif input == 6
-            puts "Here are the countries on page #{input}:"
+            puts "*** Here are the countries on page #{input} ***"
                 Country.all[input+154, 32].each.with_index(input+155) do |country, index|
                         puts "#{index}. #{country.name}"
             end
             desired_country
         elsif input == 7
-            puts "Here are the countries on page #{input}:"
+            puts "*** Here are the countries on page #{input} ***"
                 Country.all[input+185, 32].each.with_index(input+186) do |country, index|
                         puts "#{index}. #{country.name}"
             end
             desired_country
         elsif input == 8
-            puts "Here are the countries on page #{input}:"
+            puts "*** Here are the countries on page #{input} ***"
                 Country.all[input+216, 32].each.with_index(input+217) do |country, index|
                         puts "#{index}. #{country.name}"
             end
             desired_country
         elsif input == 0
-            puts "Here are all the 256 countries:"
+            puts "*** Here are all the 256 countries ***"
             list_countries
             desired_country
         else
@@ -110,8 +110,8 @@ binding.pry
         end
     end
 
-def desired_country
-    puts ""
+    def desired_country
+        puts ""
         puts "Is the country you're interested in on this page? (y/n)"
         input = gets.chomp
         if input === "y" || input === "Y"
@@ -124,17 +124,17 @@ def desired_country
         end
     end
 
-            def select_country
-                puts "Please select a country by entering its number (1-256):"
-                input = gets.chomp
-                    if input.to_i.between?(1, Country.all.count)
-                    country = Country.all[input.to_i-1]
-                    display_country_details(country)
-                    another_country
-                    else
-                        select_country
-                    end
-            end
+    def select_country
+        puts "Please select a country by entering its number (1-256):"
+        input = gets.chomp
+        if input.to_i.between?(1, Country.all.count)
+            country = Country.all[input.to_i-1]
+            display_country_details(country)
+            another_country
+        else
+            select_country
+        end
+    end
 
     def display_country_details(country)
         API.load_country_details(country)
@@ -173,6 +173,5 @@ def desired_country
             another_country
         end
     end
-
 end
 

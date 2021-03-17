@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Elena-Weber"]
   spec.email         = ["crochetmiracles@gmail.com"]
 
-  spec.summary       = "Short summary"
-  spec.description   = "Longer description"
+  spec.summary       = "World Traveller's Guide"
+  spec.description   = "A guide to 256 countries of the world"
   spec.homepage      = "http://mygemserver.com"
   spec.license       = "MIT"
   spec.required_ruby_version = Gem::Requirement.new(">= 2.4.0")

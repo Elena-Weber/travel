@@ -12,8 +12,6 @@ class API
             url = count["url"]
             Country.new(name, url)
         end
-        
-    
     end
 
     def self.load_country_details(country)
@@ -38,7 +36,5 @@ class API
         #country.advice = new_country["advise"]["UA"]["advise"]
         country.neighbors = new_country["neighbors"].collect {|nei|nei["name"]}.join(", ")
     #binding.pry
-        
     end
-
 end
