@@ -4,19 +4,39 @@ class CLI
         puts "**********************************************"
         puts "*                                            *"
         puts "* Hello! Welcome to World Traveller's Guide! *"
-        puts "**********************************************"
         puts "*                                            *"
+        puts "**********************************************"
         puts "Here is the list of countries in the guide:"
+        puts "Please enter the name of the country or type \"list\" to see the full list."
         API.load_countries
-        list_countries
-        select_country
-        another_country
+
+        type_country
+        #list_countries
+        #select_country
+        #another_country
     end
 
     def list_countries
         Country.all.each_with_index do |country, index|
             puts "#{index+1}. #{country.name}"
         end
+    end
+
+    def type_country
+        input = gets.chomp
+        
+        country = Country.all.detect do |country|
+            country.name == input
+        end
+
+        if input == country.name
+            puts "hi"
+        elsif input == "list"
+            puts "list"
+        else
+            puts "bye"
+        end
+#binding.pry 
     end
 
     def select_country
