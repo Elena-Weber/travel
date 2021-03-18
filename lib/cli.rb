@@ -15,7 +15,7 @@ class CLI
         puts ""
         puts "       **********************************************"
         puts "       *                                            *"
-        puts "       * Hello! Welcome to World Traveller's Guide! *"
+        puts "       * Hello! Welcome to World Traveler's Guide! *"
         puts "       *                                            *"
         puts "       **********************************************"
         API.load_countries

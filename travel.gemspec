@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Elena-Weber"]
   spec.email         = ["crochetmiracles@gmail.com"]
 
-  spec.summary       = "World Traveller's Guide"
+  spec.summary       = "World Traveler's Guide"
   spec.description   = "A guide to 256 countries of the world"
   spec.homepage      = "http://mygemserver.com"
   spec.license       = "MIT"
