@@ -18,33 +18,44 @@ class CLI
         puts "       * Hello! Welcome to World Traveller's Guide! *"
         puts "       *                                            *"
         puts "       **********************************************"
-        #puts "Please enter the name of the country or type \"list\" to see the full list."
         API.load_countries
-        #enter_country
-        country_pages
+        find_country
     end
 
-    def list_countries
-        Country.all.each_with_index do |country, index|
-            puts "#{index+1}. #{country.name}"
-        end
-    end
-
-    def enter_country
+    def find_country
+        puts "Enter the name of the country or type \"list\" to see the list of them."
         input = gets.chomp
-
-        country = Country.all.detect do |country|
+        if country = Country.all.detect do |country|
             country.name == input
-        end
-
-        if input == country.name
-            puts "hi"
-        elsif input == "list"
-            puts "list"
+            end
+            display_country_details(country)
+            another_country
+        elsif input == "list" || input == "List" || input == "LIST"
+            country_pages
         else
-            puts "bye"
+            puts "Oops! Please make sure there are no typos or mistakes in the country name and start with a Capital Letter."
+            puts ""
+            find_country
         end
-#binding.pry 
+    end
+
+    def display_country_details(country)
+        API.load_country_details(country)
+        puts ""
+        puts "You have selected the country: #{country.name}"
+        puts ""
+        puts "Here is some useful information:"
+        puts "Full name: #{country.full_name}"
+        puts "Country codes: #{country.country_code_2}, #{country.country_code_3}"
+        puts "Language: #{country.language}"
+        puts "Country phone code: +#{country.country_phone_code}"
+        puts "In case of emergency, dial: police: #{country.police}, ambulance: #{country.ambulance}, fire: #{country.fire}"
+        puts "Is the tap water safe to drink? #{country.water}"
+        puts "Necessary vaccinations: #{country.vaccinations}"
+        puts "Currency: name: #{country.currency}, code: #{country.currency_code}, symbol: #{country.currency_symbol}"
+        puts "Travel advisory: #{country.advice}"
+        puts "Neigboring countries: #{country.neighbors}"
+        puts ""
     end
 
     def country_pages
@@ -136,30 +147,18 @@ class CLI
         end
     end
 
-    def display_country_details(country)
-        API.load_country_details(country)
-        puts ""
-        puts "You have selected the country: #{country.name}"
-        puts ""
-        puts "Here is some useful information:"
-        puts "Full name: #{country.full_name}"
-        puts "Country codes: #{country.country_code_2}, #{country.country_code_3}"
-        puts "Language: #{country.language}"
-        puts "Country phone code: +#{country.country_phone_code}"
-        puts "In case of emergency, dial: police: #{country.police}, ambulance: #{country.ambulance}, fire: #{country.fire}"
-        puts "Is the tap water safe to drink? #{country.water}"
-        puts "Necessary vaccinations: #{country.vaccinations}"
-        puts "Currency: name: #{country.currency}, code: #{country.currency_code}, symbol: #{country.currency_symbol}"
-        puts "Travel advisory: #{country.advice}"
-        puts "Neigboring countries: #{country.neighbors}"
-        puts ""
+    def list_countries
+        Country.all.each_with_index do |country, index|
+            puts "#{index+1}. #{country.name}"
+        end
     end
 
     def another_country
+        puts ""
         puts "Would you like to get information about another country? (y/n)"
         input = gets.chomp
         if input === "y" || input === "Y"
-            country_pages
+            find_country
         elsif input === "n" || input === "N"
             puts "Bye-bye! Have a nice day! Safe travels!"
             puts "          ____                              "
