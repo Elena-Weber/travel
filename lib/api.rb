@@ -32,9 +32,6 @@ class API
         country.vaccinations = new_country["vaccinations"].collect {|vacc|vacc["name"]}.join(", ")
         country.currency = new_country["currency"]["name"]
         country.currency_code = new_country["currency"]["code"]
-        country.currency_symbol = new_country["currency"]["symbol"]
-        #country.advice = new_country["advise"]["UA"]["advise"]
         country.neighbors = new_country["neighbors"].collect {|nei|nei["name"]}.join(", ")
-    #binding.pry
     end
 end

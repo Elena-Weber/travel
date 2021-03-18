@@ -52,8 +52,7 @@ class CLI
         puts "In case of emergency, dial: police: #{country.police}, ambulance: #{country.ambulance}, fire: #{country.fire}"
         puts "Is the tap water safe to drink? #{country.water}"
         puts "Necessary vaccinations: #{country.vaccinations}"
-        puts "Currency: name: #{country.currency}, code: #{country.currency_code}, symbol: #{country.currency_symbol}"
-        puts "Travel advisory: #{country.advice}"
+        puts "Currency: name: #{country.currency}, code: #{country.currency_code}"
         puts "Neigboring countries: #{country.neighbors}"
         puts ""
     end
