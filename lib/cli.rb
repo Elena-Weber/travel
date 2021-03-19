@@ -115,7 +115,7 @@ class CLI
         elsif input == 0
             puts "*** Here are all the 256 countries ***"
             list_countries
-            desired_country
+            select_country
         else
             country_pages
         end
@@ -136,6 +136,7 @@ class CLI
     end
 
     def select_country
+        puts ""
         puts "Please select a country by entering its number (1-256):"
         input = gets.chomp
         if input.to_i.between?(1, Country.all.count)

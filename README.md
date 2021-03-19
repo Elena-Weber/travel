@@ -1,6 +1,6 @@
 # Travel
 
-Welcome to World Travellers Guide!
+Welcome to World Traveler's Guide!
 
 It provides the necessary travel information for 256 countries of the world, including their language, currency, emergency phone numbers etc.
 The API used is from the website Travelbriefing.org.
