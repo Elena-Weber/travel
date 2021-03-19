@@ -23,6 +23,7 @@ class CLI
     end
 
     def find_country
+        puts ""
         puts "Enter the name of the country or type \"list\" to see the list of them."
         input = gets.chomp
         if country = Country.all.detect do |country|
@@ -61,7 +62,7 @@ class CLI
         puts ""
         puts "Browse through the countries by entering the page number: 1, 2, 3, 4, 5, 6, 7, 8 (each page contains 32 countries)."
         puts "Alternatively, enter 0 to see the whole list (256 countries) on a single page."
-        puts "! Please note that the countries are in the alphebetical order !"
+        puts "! Please note that the countries are in the alphabetical order !"
         input = gets.chomp.to_i
         if input == 1
             puts "*** Here are the countries on page #{input} ***"
