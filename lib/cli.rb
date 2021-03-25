@@ -15,7 +15,7 @@ class CLI
         puts ""
         puts "       **********************************************"
         puts "       *                                            *"
-        puts "       * Hello! Welcome to World Traveler's Guide! *"
+        puts "       * Hello! Welcome to World Traveler's Guide!  *"
         puts "       *                                            *"
         puts "       **********************************************"
         API.load_countries
@@ -65,52 +65,52 @@ class CLI
         puts "! Please note that the countries are in the alphabetical order !"
         input = gets.chomp.to_i
         if input == 1
-            puts "*** Here are the countries on page #{input} ***"
+           puts "*** Here are the countries on page #{input} ***"
             Country.all[input-1, 32].each.with_index(input) do |country, index|
                 puts "#{index}. #{country.name}"
-            end
+                end
             desired_country
         elsif input == 2
             puts "*** Here are the countries on page #{input} ***"
-                Country.all[input+30, 32].each.with_index(input+31) do |country, index|
-                        puts "#{index}. #{country.name}"
+            Country.all[input+30, 32].each.with_index(input+31) do |country, index|
+                puts "#{index}. #{country.name}"
                 end
-                desired_country
+            desired_country
         elsif input == 3
             puts "*** Here are the countries on page #{input} ***"
-                Country.all[input+61, 32].each.with_index(input+62) do |country, index|
-                        puts "#{index}. #{country.name}"
-            end
+            Country.all[input+61, 32].each.with_index(input+62) do |country, index|
+                puts "#{index}. #{country.name}"
+                end
             desired_country
         elsif input == 4
             puts "*** Here are the countries on page #{input} ***"
-                Country.all[input+92, 32].each.with_index(input+93) do |country, index|
-                        puts "#{index}. #{country.name}"
-            end
+            Country.all[input+92, 32].each.with_index(input+93) do |country, index|
+                puts "#{index}. #{country.name}"
+                end
             desired_country
         elsif input == 5
             puts "*** Here are the countries on page #{input} ***"
-                Country.all[input+123, 32].each.with_index(input+124) do |country, index|
-                        puts "#{index}. #{country.name}"
-            end
+            Country.all[input+123, 32].each.with_index(input+124) do |country, index|
+                puts "#{index}. #{country.name}"
+                end
             desired_country
         elsif input == 6
             puts "*** Here are the countries on page #{input} ***"
-                Country.all[input+154, 32].each.with_index(input+155) do |country, index|
-                        puts "#{index}. #{country.name}"
+            Country.all[input+154, 32].each.with_index(input+155) do |country, index|
+                puts "#{index}. #{country.name}"
             end
             desired_country
         elsif input == 7
             puts "*** Here are the countries on page #{input} ***"
-                Country.all[input+185, 32].each.with_index(input+186) do |country, index|
-                        puts "#{index}. #{country.name}"
-            end
+            Country.all[input+185, 32].each.with_index(input+186) do |country, index|
+                puts "#{index}. #{country.name}"
+                end
             desired_country
         elsif input == 8
             puts "*** Here are the countries on page #{input} ***"
-                Country.all[input+216, 32].each.with_index(input+217) do |country, index|
-                        puts "#{index}. #{country.name}"
-            end
+            Country.all[input+216, 32].each.with_index(input+217) do |country, index|
+                puts "#{index}. #{country.name}"
+                end
             desired_country
         elsif input == 0
             puts "*** Here are all the 256 countries ***"
