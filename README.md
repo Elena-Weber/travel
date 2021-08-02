@@ -2,8 +2,10 @@
 
 Welcome to World Traveler's Guide!
 
-It provides the necessary travel information for 256 countries of the world, including their language, currency, emergency phone numbers etc.
-The API used is from the website Travelbriefing.org.
+This CLI (Command Line App) provides the necessary travel information for 256 countries of the world, including their language, currency, emergency phone numbers etc. The API used is from the website Travelbriefing.org.
+
+Here is the demo video link:
+https://youtu.be/tSHxcHZLaok
 
 ## Installation
 
@@ -24,6 +26,7 @@ Or install it yourself as:
 ## Usage
 
 To start the program, run `bin/travel` in your terminal and follow the on screen prompts.
+To exit the app type Ctl+C.
 
 ## Development
 
